@@ -1,0 +1,60 @@
+version: "3.8"
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:8
+    container_name: task-manager-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: adminpassword
+      MONGO_INITDB_DATABASE: taskdb
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - task-manager-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: task-manager-backend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://admin:adminpassword@mongodb:27017/taskdb?authSource=admin
+      JWT_SECRET: your-super-secret-jwt-key-change-this-in-production
+      FRONTEND_URL: http://localhost:5173
+    depends_on:
+      - mongodb
+    networks:
+      - task-manager-network
+
+  # Frontend (served via nginx)
+  frontend:
+    build:
+      context: ./client
+      args:
+        - VITE_API_URL=/api
+      dockerfile: Dockerfile
+    container_name: task-manager-frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - task-manager-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  task-manager-network:
+    driver: bridge
