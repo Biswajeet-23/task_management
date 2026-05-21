@@ -250,22 +250,14 @@ task_management/
 
 ## 📸 Screenshots
 
-### Login Page
-
-![Login Page Light](screenshots/Login_light.png)
-![Login Page Dark](./screenshots/Login_dark.png)
-
-### Register Page
-
-![Register Page](screenshots/register.png)
-
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
-### Tasks List
-
-![Tasks List](screenshots/tasks.png)
+| Screen Name | Light Mode | Dark Mode |
+|-------------|-------------|------------|
+| **Login Page** | ![Login Light](./screenshots/Login_light.png) | ![Login Dark](./screenshots/Login_dark.png) |
+| **Register Page** | ![Register Light](./screenshots/Register_light.png) | ![Register Dark](./screenshots/Register_dark.png) |
+| **Dashboard** | ![Dashboard Light](./screenshots/Dashboard_light.png) | ![Dashboard Dark](./screenshots/Dashboard_dark.png) |
+| **Kanban** | ![Kanban Light](./screenshots/Kanban_light.png) | ![Kanban Dark](./screenshots/Kanban_dark.png) |
+| **Tasks List** | ![Tasks Light](./screenshots/Tasks_light.png) | ![Tasks Dark](./screenshots/Tasks_dark.png) |
+| **Create Task** | ![Create Task Light](./screenshots/Create_task_light.png) | ![Create Task Dark](./screenshots/Create_task_dark.png) |
 
 ---
 
