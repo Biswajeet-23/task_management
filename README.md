@@ -6,7 +6,11 @@ A full-stack task management application with user authentication, CRUD operatio
 
 - **Frontend:** [https://task-management-ivory-two.vercel.app](https://task-management-ivory-two.vercel.app/login)
 - **Backend API:** [https://task-management-api-8zdu.onrender.com](https://task-management-api-8zdu.onrender.com)
-- **Demo Account:** email: test@gmail.com  password: Test@123
+
+## 🔐 Demo Account
+
+> **Email:** `test@gmail.com`  
+> **Password:** `Test@123`
 
 > 📸 **Screenshots :** See the [Screenshots](#-screenshots) section below.
 
