@@ -27,8 +27,24 @@ services:
     environment:
       PORT: 3000
       MONGODB_URI: mongodb://admin:adminpassword@mongodb:27017/taskdb?authSource=admin
-      JWT_SECRET: your-super-secret-jwt-key-change-this-in-production
+      JWT_SECRET: 4d9c2e8a7b1f5g6h9j3k7m2n8p4q6r1s5t8u0v3w9x2y6z1A4B7C9D2E5F8G
       FRONTEND_URL: http://localhost:5173
+    depends_on:
+      - mongodb
+    networks:
+      - task-manager-network
+
+  backend-test:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+      target: test
+    container_name: task-manager-backend-test
+    environment:
+      PORT: 3000
+      MONGODB_URI: mongodb://admin:adminpassword@mongodb:27017/taskdb_test?authSource=admin
+      JWT_SECRET: test-jwt-secret-for-ci-cd
+      NODE_ENV: test
     depends_on:
       - mongodb
     networks:
