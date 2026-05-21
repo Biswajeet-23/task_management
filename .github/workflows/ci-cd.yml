@@ -15,7 +15,11 @@ jobs:
 
       - name: Run Backend E2E Tests
         run: |
-          docker compose -f docker-compose.yml up --build backend-test --abort-on-container-exit
+          docker compose -f docker-compose.yml up \
+            --build \
+            backend-test \
+            --abort-on-container-exit \
+            --exit-code-from backend-test
 
       - name: Cleanup
         if: always()
@@ -31,7 +35,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "25"
+          node-version: "22"
           cache: "npm"
           cache-dependency-path: api/package-lock.json
 
@@ -57,7 +61,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "25"
+          node-version: "22"
           cache: "npm"
           cache-dependency-path: client/package-lock.json
 

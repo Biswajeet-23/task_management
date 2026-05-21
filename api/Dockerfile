@@ -16,7 +16,8 @@ WORKDIR /app
 
 # Copy everything from base stage
 COPY --from=base /app /app
-CMD ["sh", "-c", "echo 'Waiting for MongoDB...' && sleep 5 && npm run test:e2e"]
+# Tests run after MongoDB healthcheck passes
+CMD ["npm", "run", "test:e2e"]
 
 # ---- Build Stage ----
 FROM base AS build
