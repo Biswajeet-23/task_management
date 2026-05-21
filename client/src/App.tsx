@@ -7,6 +7,7 @@ import DashboardPage from "./pages/DashboardPage";
 import TasksPage from "./pages/TasksPage";
 import { AuthProvider } from "./providers/AuthProvider";
 import { TaskProvider } from "./providers/TaskProvider";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated, isLoading } = useAuth();
@@ -44,13 +45,15 @@ function AppRoutes() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <AuthProvider>
-        <TaskProvider>
-          <AppRoutes />
-        </TaskProvider>
-      </AuthProvider>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <AuthProvider>
+          <TaskProvider>
+            <AppRoutes />
+          </TaskProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

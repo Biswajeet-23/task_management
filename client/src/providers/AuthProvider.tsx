@@ -2,6 +2,7 @@ import { useState, useEffect, type ReactNode } from "react";
 import { authApi } from "../services/api";
 import { AuthContext } from "../context/AuthContext";
 import type { User } from "../types";
+import { AxiosError } from "axios";
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
@@ -33,16 +34,38 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const login = async (email: string, password: string) => {
-    const response = await authApi.login(email, password);
-    const { token: newToken, user: newUser } = response.data;
-    localStorage.setItem("token", newToken);
-    localStorage.setItem("user", JSON.stringify(newUser));
-    setToken(newToken);
-    setUser(newUser);
+    try {
+      const response = await authApi.login(email, password);
+      const { token: newToken, user: newUser } = response.data;
+      localStorage.setItem("token", newToken);
+      localStorage.setItem("user", JSON.stringify(newUser));
+      setToken(newToken);
+      setUser(newUser);
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        const message =
+          error.response?.data?.message || "Invalid email or password";
+        throw new Error(message, { cause: error });
+      }
+      throw new Error("An unexpected error occurred. Please try again.", {
+        cause: error,
+      });
+    }
   };
 
   const register = async (email: string, password: string) => {
-    await authApi.register(email, password);
+    try {
+      await authApi.register(email, password);
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        const message =
+          error.response?.data?.message || "Failed to create account";
+        throw new Error(message, { cause: error });
+      }
+      throw new Error("An unexpected error occurred. Please try again.", {
+        cause: error,
+      });
+    }
   };
 
   const logout = () => {
