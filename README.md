@@ -252,8 +252,8 @@ task_management/
 
 ### Login Page
 
-![Login Page Light]([screenshots/login.png](https://github.com/Biswajeet-23/task_management/blob/master/screenshots/Login_light.png))
-![Login Page Dark]([screenshots/login.png](https://github.com/Biswajeet-23/task_management/blob/master/screenshots/Login_dark.png))
+![Login Page Light](screenshots/Login_light.png)
+![Login Page Dark](./screenshots/Login_dark.png)
 
 ### Register Page
 
