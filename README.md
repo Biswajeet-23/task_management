@@ -13,7 +13,6 @@ A full-stack task management application with user authentication, CRUD operatio
 > **Password:** `Test@123`
 
 > 📸 **Screenshots :** See the [Screenshots](#-screenshots) section below.
-
 ---
 
 ## 📋 Table of Contents
