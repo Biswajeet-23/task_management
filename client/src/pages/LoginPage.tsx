@@ -92,7 +92,7 @@ export default function LoginPage() {
               isDark ? "text-white" : "text-gray-900"
             }`}
           >
-            TaskFlow
+            Ticklr
           </h1>
           <p
             className={`mt-2 text-sm transition-colors ${

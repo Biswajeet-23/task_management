@@ -54,7 +54,7 @@ export default function Layout() {
                     isDark ? "text-white" : "text-gray-900"
                   }`}
                 >
-                  TaskFlow
+                  Ticklr
                 </span>
               </Link>
 
@@ -228,7 +228,7 @@ export default function Layout() {
                 size={16}
                 className={isDark ? "text-blue-400" : "text-blue-600"}
               />
-              <span>TaskFlow - Manage your tasks efficiently</span>
+              <span>Ticklr - Manage your tasks efficiently</span>
             </div>
             <div
               className={`flex items-center gap-6 text-xs transition-colors ${
