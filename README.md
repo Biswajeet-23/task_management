@@ -255,7 +255,7 @@ task_management/
 | **Login Page** | ![Login Light](./screenshots/Login_light.png) | ![Login Dark](./screenshots/Login_dark.png) |
 | **Register Page** | ![Register Light](./screenshots/Register_light.png) | ![Register Dark](./screenshots/Register_dark.png) |
 | **Dashboard** | ![Dashboard Light](./screenshots/Dashboard_light.png) | ![Dashboard Dark](./screenshots/Dashboard_dark.png) |
-| **Kanban** | ![Kanban Light](./screenshots/Dashboard_Kanban_light.png) | ![Kanban Dark](./screenshots/Dashboard_Kanban_dark.png) |
+| **Kanban** | ![Kanban Light](./screenshots/Dashboard_kanban_light.png) | ![Kanban Dark](./screenshots/Dashboard_kanban_dark.png) |
 | **Tasks List** | ![Tasks Light](./screenshots/Tasks_light.png) | ![Tasks Dark](./screenshots/Tasks_dark.png) |
 | **Create Task** | ![Create Task Light](./screenshots/Create_Task_light.png) | ![Create Task Dark](./screenshots/Create_Task_dark.png) |
 
