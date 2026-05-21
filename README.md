@@ -4,7 +4,7 @@ A full-stack task management application with user authentication, CRUD operatio
 
 ## 🚀 Live Demo
 
-- **Frontend:** [https://task-management-ivory-two.vercel.app/](https://task-management-ivory-two.vercel.app/)
+- **Frontend:** [https://task-management-ivory-two.vercel.app/](https://task-management-ivory-two.vercel.app/login)
 - **Backend API:** [https://task-management-api-8zdu.onrender.com](https://task-management-api-8zdu.onrender.com)
 
 > 📸 **Screenshots :** See the [Screenshots](#-screenshots) section below.
